@@ -956,7 +956,7 @@ func (l *Launcher) updatePatchFiles() {
 	// download the patch files in errgroup
 	var g errgroup.Group
 	for _, p := range patchFiles {
-		url := fmt.Sprintf("https://raw.githubusercontent.com/EQEmu/Server/master/utils/patches/%s", p)
+		url := fmt.Sprintf("https://raw.githubusercontent.com/EQEmu/EQEmu/master/utils/patches/%s", p)
 		path := filepath.Join(l.patchesDirectory, p)
 		relative := strings.ReplaceAll(path, l.pathmgmt.GetEQEmuServerPath()+string(filepath.Separator), "")
 
@@ -972,7 +972,7 @@ func (l *Launcher) updatePatchFiles() {
 	}
 
 	for _, o := range opcodeFiles {
-		url := fmt.Sprintf("https://raw.githubusercontent.com/EQEmu/Server/master/utils/patches/%s", o)
+		url := fmt.Sprintf("https://raw.githubusercontent.com/EQEmu/EQEmu/master/utils/patches/%s", o)
 		path := filepath.Join(l.opcodesDirectory, o)
 		relative := strings.ReplaceAll(path, l.pathmgmt.GetEQEmuServerPath()+string(filepath.Separator), "")
 

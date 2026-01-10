@@ -222,7 +222,7 @@ func (c *UpdateCommand) Handle(_ *cobra.Command, args []string) {
 		if localVersion.LessThan(latestVersion) {
 			fmt.Println("Updating server")
 			release := fmt.Sprintf(
-				"https://github.com/EQEmu/Server/releases/download/v%s/eqemu-server-linux-x64.zip",
+				"https://github.com/EQEmu/EQEmu/releases/download/v%s/eqemu-server-linux-x64.zip",
 				latestVersion.String(),
 			)
 			err := c.updater.InstallRelease(release)

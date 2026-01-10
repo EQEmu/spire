@@ -21,13 +21,13 @@
 
           <!-- EQEmu Github -->
           <div class="nav-item d-none d-md-flex">
-            <a href="https://github.com/EQEmu/Server"
+            <a href="https://github.com/EQEmu/EQEmu"
                class="btn btn-outline-primary btn-sm"
                data-original-title="Github"
                data-toggle="tooltip"
                target="eqemu-github">
               <i class="fe fe-github" style="font-size:12px"></i>
-              EQEmu/Server
+              EQEmu/EQEmu
             </a>
           </div>
 

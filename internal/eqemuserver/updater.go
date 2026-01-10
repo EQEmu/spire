@@ -202,13 +202,13 @@ func (u *Updater) GetBuildInfo() (BuildInfo, error) {
 }
 
 func (u *Updater) GetLatestReleaseVersion() (string, error) {
-	// get latest version from https://github.com/eqemu/server
+	// get latest version from https://github.com/EQEmu/EQEmu
 	type Release struct {
 		TagName string `json:"tag_name"`
 	}
 
 	// get latest release version
-	resp, err := http.Get("https://api.github.com/repos/eqemu/server/releases/latest")
+	resp, err := http.Get("https://api.github.com/repos/EQEmu/EQEmu/releases/latest")
 	if err != nil {
 		u.logger.Fatal().Err(err).Msg("could not get latest release version")
 	}

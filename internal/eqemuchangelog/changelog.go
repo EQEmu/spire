@@ -218,7 +218,7 @@ func (c *Changelog) BuildChangelog(commits []*github.RepositoryCommit) string {
 					pr := ""
 					if len(e.PullRequest) > 0 {
 						pr = fmt.Sprintf(
-							"([#%v](https://github.com/EQEmu/Server/pull/%v))",
+							"([#%v](https://github.com/EQEmu/EQEmu/pull/%v))",
 							e.PullRequest,
 							e.PullRequest,
 						)

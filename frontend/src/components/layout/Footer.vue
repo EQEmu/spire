@@ -7,15 +7,15 @@
             <div class="col-auto">
               <ul class="list-inline list-inline-dots mb-0">
                 <li class="list-inline-item">
-                  <a href="https://github.com/EQEmu/Server/wiki" target="wiki">Documentation</a>
+                  <a href="https://github.com/EQEmu/EQEmu/wiki" target="wiki">Documentation</a>
                 </li>
               </ul>
             </div>
             <div class="col-auto">
-              <a href="https://github.com/EQEmu/Server" class="btn btn-outline-primary btn-sm"
+              <a href="https://github.com/EQEmu/EQEmu" class="btn btn-outline-primary btn-sm"
                  target="eqemu-github">
                 <i class="fe fe-github" style="font-size:12px"></i>
-                EQEmu/Server
+                EQEmu/EQEmu
               </a>
             </div>
           </div>

@@ -1,3 +1,7 @@
+## [4.24.1] 1/10/2026
+
+* **Info** Updated a few more URL references. (@Joligario)
+
 ## [4.24.0] 1/10/2026
 
 * **Info** Updated URL references to EQEmu/spire. (@Joligario)
@@ -470,7 +474,7 @@ Occulus has been ported natively to Spire. All remaining features have been port
 
 ## [3.9.0] 1/6/2024
 
-* **Server Config** Update server admin configuration editor to use new config schema. Mailserver and chatserver have been consolidated to `server.ucs` see https://github.com/EQEmu/Server/pull/3768
+* **Server Config** Update server admin configuration editor to use new config schema. Mailserver and chatserver have been consolidated to `server.ucs` see https://github.com/EQEmu/EQEmu/pull/3768
 
 ## [3.8.8] 1/6/2024
 
@@ -1205,7 +1209,7 @@ Fix issue where Merchant Editor wasn't rendering NPC preview cards properly
 * Tasks now save automatically when a field is modified and activity actions are invoked
 * Tasks now set proper defaults for `req_activity_id` (-1)
 
-See Server PR for more major system change details https://github.com/EQEmu/Server/pull/2449
+See Server PR for more major system change details https://github.com/EQEmu/EQEmu/pull/2449
 
 ### NPC Match List Support
 
@@ -1274,7 +1278,7 @@ To be updated in official documentation
 
 ### [Task Editor] Minor Update
 
-* Minimal update to restore task editor functionality from schema changes https://github.com/EQEmu/Server/pull/2402
+* Minimal update to restore task editor functionality from schema changes https://github.com/EQEmu/EQEmu/pull/2402
 * Proximity functionality will be broken until new fields are handled
 
 ## [1.13.7]
@@ -1637,7 +1641,7 @@ To run, simply put **spire.exe** in your server directory and double click (On W
 ### Quest API Explorer
 
 * Added a **Refresh** button for local and desktop builds for anyone who wants to refresh their Quest definitions
-  manually. Production and hosted version of Spire receives webhooks when new commits are made to EQEmu/Server and local
+  manually. Production and hosted version of Spire receives webhooks when new commits are made to EQEmu/EQEmu and local
   installations won't receive this and require a manual update.
 
 ### General Fixes

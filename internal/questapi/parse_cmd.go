@@ -22,7 +22,7 @@ func NewParseCommand(
 		parser: parser,
 		command: &cobra.Command{
 			Use:   "quest:parse",
-			Short: "Parses EQEmu/Server Quest API source files for documentation",
+			Short: "Parses EQEmu/EQEmu Quest API source files for documentation",
 		},
 	}
 
