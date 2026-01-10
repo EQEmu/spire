@@ -89,7 +89,7 @@ func (a *Installer) Install() error {
 ------------------------------------------------------------------------------------------
 | • Developed and maintained by the EQEmulator Development team                          |
 ------------------------------------------------------------------------------------------
-| • GitHub https://github.com/eqemu/server                                               |
+| • GitHub https://github.com/EQEmu/EQEmu                                                |
 ------------------------------------------------------------------------------------------
 | • Everquest is a registered trademark Daybreak Game Company LLC.                       |
 ------------------------------------------------------------------------------------------
@@ -445,7 +445,7 @@ func (a *Installer) cloneEQEmuMaps() error {
 	// download the zip file
 	err = download.WithProgress(
 		dumpZip,
-		"https://github.com/EQEmuTools/eqemu-maps/releases/latest/download/maps.zip",
+		"https://github.com/EQEmu/maps/releases/latest/download/maps.zip",
 	)
 	if err != nil {
 		return err
@@ -706,12 +706,12 @@ func (a *Installer) Exec(c ExecConfig) (string, error) {
 func (a *Installer) cloneEQEmuSource() error {
 	a.Banner("Initializing Server Source")
 
-	a.logger.Info().Any("repo", "https://github.com/EQEmu/Server.git").Msg("Cloning from repository")
+	a.logger.Info().Any("repo", "https://github.com/EQEmu/EQEmu.git").Msg("Cloning from repository")
 
 	// clone the repository
 	repoPath := a.installConfig.CodePath
 	_, err := git.PlainClone(repoPath, false, &git.CloneOptions{
-		URL:               "https://github.com/EQEmu/Server.git",
+		URL:               "https://github.com/EQEmu/EQEmu.git",
 		Progress:          os.Stdout,
 		RecurseSubmodules: git.DefaultSubmoduleRecursionDepth,
 	})
@@ -943,7 +943,7 @@ func (a *Installer) installBinaries() error {
 	fmt.Printf("Downloading binaries to [%v]\n", tempPath)
 	err := download.WithProgress(
 		tempPath,
-		fmt.Sprintf("https://github.com/eqemu/server/releases/latest/download/eqemu-server-%v-x64.zip", runtime.GOOS),
+		fmt.Sprintf("https://github.com/EQEmu/EQEmu/releases/latest/download/eqemu-server-%v-x64.zip", runtime.GOOS),
 	)
 	if err != nil {
 		return err
@@ -2080,7 +2080,7 @@ func (a *Installer) initLoginServer() error {
 	a.Banner("Initializing Login Server")
 
 	// download the default login config
-	url := "https://raw.githubusercontent.com/EQEmu/Server/master/loginserver/login_util/login.json"
+	url := "https://raw.githubusercontent.com/EQEmu/EQEmu/master/loginserver/login_util/login.json"
 	a.logger.Info().Any("url", url).Msg("Downloading default login config")
 	err := download.WithProgress(a.pathmanager.GetEqemuLoginServerConfigPath(), url)
 	if err != nil {
@@ -2109,7 +2109,7 @@ func (a *Installer) initLoginServer() error {
 	}
 
 	// create the login server database tables
-	url = "https://raw.githubusercontent.com/EQEmu/Server/master/loginserver/login_util/login_schema.sql"
+	url = "https://raw.githubusercontent.com/EQEmu/EQEmu/master/loginserver/login_util/login_schema.sql"
 	a.logger.Info().Any("url", url).Msg("Downloading login schema")
 	err = download.WithProgress(filepath.Join(os.TempDir(), "login_schema.sql"), url)
 	if err != nil {

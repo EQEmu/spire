@@ -128,7 +128,7 @@ func (s *Updater) CheckForUpdates(interactive bool) bool {
 
 	// get releases
 	client := github.NewClient(&http.Client{Timeout: 5 * time.Second})
-	release, _, err := client.Repositories.GetLatestRelease(context.Background(), "EQEmuTools", "spire")
+	release, _, err := client.Repositories.GetLatestRelease(context.Background(), "EQEmu", "spire")
 	if err != nil {
 		s.logger.Info().Err(err).Msg("Failed to get latest release")
 		return false

@@ -54,7 +54,7 @@
             <div class="col-9">
               <small class="text-muted">
                 Uses official release binaries from
-                <a href="https://github.com/EQEmu/Server/releases" target="releases">EverQuest Emulator Server</a>
+                <a href="https://github.com/EQEmu/EQEmu/releases" target="releases">EverQuest Emulator Server</a>
               </small>
               <div class="mt-1">
                 Use this when you are not developing server or making code changes to server code

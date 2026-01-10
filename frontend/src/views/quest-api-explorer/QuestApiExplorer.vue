@@ -287,7 +287,7 @@
           target="_blank"
         >
           <img
-            src="https://github.com/EQEmu/Server/assets/3319450/55d8a923-47d8-4584-aede-f3aa9220fbaa"
+            src="https://github.com/EQEmu/EQEmu/assets/3319450/55d8a923-47d8-4584-aede-f3aa9220fbaa"
             style="width: 100%; border-radius: 10px"
           >
         </a>
