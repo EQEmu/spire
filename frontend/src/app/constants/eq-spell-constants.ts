@@ -1481,3 +1481,10 @@ export const SPA_EFFECT_FORMULAS = {
   "1001-1999": "Base - (ID - 1000) * BuffCalc",
   "2000-2650": "Base * (Level * (ID - 2000) + 1)",
 };
+
+export const TELEPORT_SPAS = [
+  83,  // Teleport
+  88,  // Evacuate
+  104, // Translocate
+  145  // Banish
+]

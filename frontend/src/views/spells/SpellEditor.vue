@@ -288,7 +288,7 @@
                          description: teleportZoneFieldName,
                          field: 'teleport_zone',
                          text: true,
-                         showIf: teleportZoneFieldName !== ''
+                         showIf: teleportZoneFieldName !== '' || this.isTeleportSpell(spell['effectid_1'])
                        },
                      ]"
                 v-if="typeof field.showIf === 'undefined' || (typeof field.showIf !== 'undefined' && field.showIf) || showAllFields"
@@ -1658,8 +1658,9 @@ import {
   DB_SPELL_TARGET_RESTRICTION,
   DB_SPELL_TARGETS,
   DB_SPELL_ZONE_TYPE,
-  TELEPORT_ZONE_SELECTOR_TYPE
-}                                     from "../../app/constants/eq-spell-constants";
+  TELEPORT_ZONE_SELECTOR_TYPE,
+  TELEPORT_SPAS
+} from "../../app/constants/eq-spell-constants";
 import {DB_SKILLS}                    from "../../app/constants/eq-skill-constants";
 import SpellIconSelector              from "./components/SpellIconSelector";
 import SpellAnimationPreview          from "./components/SpellAnimationPreview";
@@ -1750,6 +1751,7 @@ export default {
       BUFF_DURATION_FORMULAS: BUFF_DURATION_FORMULAS,
       BASE_VALUE_FORMULAS: BASE_VALUE_FORMULAS,
       TELEPORT_ZONE_SELECTOR_TYPE: TELEPORT_ZONE_SELECTOR_TYPE,
+      TELEPORT_SPAS: TELEPORT_SPAS,
       DB_STRING_EDITOR_URL: ROUTE.STRINGS_DATABASE,
       loaded: true,
 
@@ -1900,20 +1902,17 @@ export default {
       // console.log(event)
 
       const selectedZone  = event.zone;
-      const TELEPORT_SPAS = [
-        83, 88, 104, 145,
-      ]
 
       for (let effectIndex = 1; effectIndex <= 12; effectIndex++) {
         const spaId = parseInt(this.spell['effectid_' + effectIndex])
-        if (spaId !== 254 && TELEPORT_SPAS.includes(spaId)) {
+        if (spaId !== 254 && this.isTeleportSpell(spaId)) {
 
           // set zone
 
           this.spell['teleport_zone'] = selectedZone.short_name
           EditFormFieldUtil.setFieldModifiedById("teleport_zone")
 
-          // make revelant slots visible when a zone is selected
+          // make relevant slots visible when a zone is selected
           for (let slot = effectIndex; slot < (effectIndex + 4); slot++) {
             this.visibleEffectSlots[slot] = true
             this.$forceUpdate()
@@ -2234,6 +2233,11 @@ export default {
           }
         }
       });
+
+      if (this.isTeleportSpell(this.spell["effectid_1"])) {
+        this.teleportZoneFieldName = "Select Zone"
+      }
+
     },
 
     load() {
@@ -2270,7 +2274,7 @@ export default {
 
           // visible slots effectid 1-12
           for (let i = 1; i <= 12; i++) {
-            if (this.spell["effectid_" + i] !== 254) {
+            if (this.spell["effectid_" + i] !== 254 || (this.isTeleportSpell(this.spell["effectid_1"]) && i <= 4)) {
               this.visibleEffectSlots[i] = true
             }
           }
@@ -2443,6 +2447,9 @@ export default {
       this.previewSpellActive           = false
       this.spaFormulasPaneActive        = true
       this.selectedFormulaSelectorField = field
+    },
+    isTeleportSpell(effect_id) {
+      return this.TELEPORT_SPAS.includes(effect_id);
     },
   }
 }
