@@ -1,14 +1,20 @@
+## [4.24.0] 1/10/2026
+
+* **Info** Updated URL references to EQEmu/spire. (@Joligario)
+* **Spire Admin** Fixed case where crash counts return null. (@Exonintrendo)
+* **Spell Editor** Better handling for teleport spells. (@Joligario)
+
 ## [4.23.4] 10/15/2025
 
-* Updated external asset references and GitHub URLs.
+* Updated external asset references and GitHub URLs. (@Akkadius)
 
 ## [4.23.3] 8/2/2025
 
-* **Items** Revert experimental UX changes to the item search page. The changes were not well received by the community and for lack of time to address the issues, we are reverting them for now. 
+* **Items** Revert experimental UX changes to the item search page. The changes were not well received by the community and for lack of time to address the issues, we are reverting them for now. (@Akkadius)
 
 ## [4.23.2] 6/15/2025
 
-* **Items** Minor UX functional adjustments to the item search page.
+* **Items** Minor UX functional adjustments to the item search page. (@Akkadius)
 
 ## [4.23.0] 6/14/2025
 
@@ -31,7 +37,7 @@
 * **Spell Editor** Add ability to select spell formula from the preview pane. (@Joligaro)
 * **Task Editor** Show "DZ Switch ID" field when current activity type is touch. (@Joligaro)
 * **Player Event Logs** Fix groundspawn event log display. (@Joligaro)
-* **Spire Admin** Add config fields to support EQEmulater Server PR #4906 [[Quests] Support Multiple Quest, Plugin, and Lua Module Paths](https://github.com/EQEmu/Server/pull/4906)
+* **Spire Admin** Add config fields to support EQEmulater Server PR #4906 [[Quests] Support Multiple Quest, Plugin, and Lua Module Paths](https://github.com/EQEmu/EQEmu/pull/4906)
 
 ## [4.21.0] 5/21/2025
 
@@ -128,7 +134,7 @@
 
 ## [4.16.3] 2/23/2025
 
-* **Bot Spells** (Mortimer) Update bot spells to support the [bot overhaul](https://github.com/EQEmu/Server/pull/4580)
+* **Bot Spells** (Mortimer) Update bot spells to support the [bot overhaul](https://github.com/EQEmu/EQEmu/pull/4580)
 * **Bot Spells** Fix issue with updating bot spells
 * **EQTraders Tradeskills Import** Many large import fixes and improvements to the EQTraders tradeskills importer. (Linked recipes, expansion filter, scraping etc.)
 
@@ -565,7 +571,7 @@ Occulus has been ported natively to Spire. All remaining features have been port
 * **Crash Analytics** Add Discord webhook to crash analytics to notify developers of new unique crashes.
 * **Server Updater** Added unique crash counts to the server updater page within Spire Admin
 
-![image](https://github.com/EQEmu/Server/assets/3319450/3d7dd8ec-2269-4041-a22a-afb57395a56c)
+![image](https://github.com/EQEmu/EQEmu/assets/3319450/3d7dd8ec-2269-4041-a22a-afb57395a56c)
 
 ## [3.3.5] 9/2/2023
 
@@ -656,7 +662,7 @@ Ignore frequently called admin endpoints in the Spire console output to make it 
 * Add UI for managing static zone launcher `minZoneProcesses`
 * When `minZoneProcesses` is set to 0, the Spire will set it to 10 by default. This is to prevent the server from booting with no zone processes
 
-![image](https://github.com/EQEmu/Server/assets/3319450/63f6395b-b4c4-46eb-8fbe-aa6ea4ca6893)
+![image](https://github.com/EQEmu/EQEmu/assets/3319450/63f6395b-b4c4-46eb-8fbe-aa6ea4ca6893)
 
 ## [3.1.4] 6/10/2023
 
@@ -827,7 +833,7 @@ Manage your logging settings directly in Spire admin. Anytime changes are made y
 
 ### [Spire Admin] Player Event Log Explorer
 
-Accompanied by a massive new feature in the EverQuest Emulator server ([see Player Event Logging](https://github.com/EQEmu/Server/pull/2833)) we are brought a powerful new explorer for rich auditing tools.
+Accompanied by a massive new feature in the EverQuest Emulator server ([see Player Event Logging](https://github.com/EQEmu/EQEmu/pull/2833)) we are brought a powerful new explorer for rich auditing tools.
 
 #### Rich Data Viewing
 
