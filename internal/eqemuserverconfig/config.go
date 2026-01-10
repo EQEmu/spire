@@ -2,8 +2,8 @@ package eqemuserverconfig
 
 import (
 	"encoding/json"
-	"github.com/EQEmuTools/spire/internal/logger"
-	"github.com/EQEmuTools/spire/internal/pathmgmt"
+	"github.com/EQEmu/spire/internal/logger"
+	"github.com/EQEmu/spire/internal/pathmgmt"
 	"os"
 	"path/filepath"
 	"sync"

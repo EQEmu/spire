@@ -1,7 +1,7 @@
 package request
 
 import (
-	"github.com/EQEmuTools/spire/internal/models"
+	"github.com/EQEmu/spire/internal/models"
 	"github.com/labstack/echo/v4"
 )
 

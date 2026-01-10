@@ -3,8 +3,8 @@ package backup
 import (
 	"bufio"
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/filepathcheck"
-	"github.com/EQEmuTools/spire/internal/pathmgmt"
+	"github.com/EQEmu/spire/internal/filepathcheck"
+	"github.com/EQEmu/spire/internal/pathmgmt"
 	"os/exec"
 	"path/filepath"
 	"strings"

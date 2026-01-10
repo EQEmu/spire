@@ -1,7 +1,7 @@
 package boot
 
 import (
-	"github.com/EQEmuTools/spire/internal/logger"
+	"github.com/EQEmu/spire/internal/logger"
 	"github.com/google/wire"
 )
 

@@ -65,7 +65,7 @@ Built for the long haul with code generation to make keeping things up to date f
 
 ## Using Spire - Locally
 
-Download the [latest release](https://github.com/EQEmuTools/spire/releases). for your operating system.
+Download the [latest release](https://github.com/EQEmu/spire/releases). for your operating system.
 
 Place the executable in your EverQuest Emulator Server directory and simply run it.
 
@@ -96,15 +96,15 @@ If you want to run Spire without an EQEmu server installation, place it in an em
 
 ## Feature Requests
 
-Interested in a feature in Spire? Please file an [issue](https://github.com/EQEmuTools/spire/issues) in the issue tracker with the prefix `[Feature Request]`
+Interested in a feature in Spire? Please file an [issue](https://github.com/EQEmu/spire/issues) in the issue tracker with the prefix `[Feature Request]`
 
 ## Reporting Bugs
 
-Found a bug? Please file an [issue](https://github.com/EQEmuTools/spire/issues) in the issue tracker with the prefix `[Bug]`
+Found a bug? Please file an [issue](https://github.com/EQEmu/spire/issues) in the issue tracker with the prefix `[Bug]`
 
 ## Contributing
 
-Want to help contribute to Spire? Anyone can submit [pull requests](https://github.com/EQEmuTools/spire/pulls) however learning the skills required to work in this project might require some extra help and learning resources.
+Want to help contribute to Spire? Anyone can submit [pull requests](https://github.com/EQEmu/spire/pulls) however learning the skills required to work in this project might require some extra help and learning resources.
 
 ### Contributing - Project Layout - Backend
 
@@ -166,12 +166,12 @@ Want to help contribute to Spire? Anyone can submit [pull requests](https://gith
 
 ### Contributing - Cutting a Release
 
-When looking to cut a new release of Spire, a PR will need to be made that resembles the following [example here](https://github.com/EQEmuTools/spire/commit/a5327c4968a08165434620bcedebe438a6500bb6). A version tag will need to be declared in both `CHANGELOG.md` containing proper release notes and the same version number will need to be updated in `package.json`.
+When looking to cut a new release of Spire, a PR will need to be made that resembles the following [example here](https://github.com/EQEmu/spire/commit/a5327c4968a08165434620bcedebe438a6500bb6). A version tag will need to be declared in both `CHANGELOG.md` containing proper release notes and the same version number will need to be updated in `package.json`.
 
 ![image](https://user-images.githubusercontent.com/3319450/192076389-0c18c58c-21de-4319-b5eb-d41801a0a063.png)
 
 
-When the changes are committed to `master` the Drone CI pipeline will automatically take care of the rest and publish the release to the [releases page](https://github.com/EQEmuTools/spire/releases)
+When the changes are committed to `master` the Drone CI pipeline will automatically take care of the rest and publish the release to the [releases page](https://github.com/EQEmu/spire/releases)
 
   ![image](https://user-images.githubusercontent.com/3319450/192076335-f5e0b810-1240-45e9-91e1-52def88845fb.png)
 
@@ -194,7 +194,7 @@ These instructions assume you have **git**, **node,** **docker** already install
 First clone Spire, copy the base `.env.dev` file to the `.env` used by Spire in local development and run `make install` in one line below.
 
 ```
-git clone https://github.com/EQEmuTools/spire.git
+git clone https://github.com/EQEmu/spire.git
 ```
 
 ###  Linux - Install
@@ -268,7 +268,7 @@ You **can** point the `.env` to a separate eqemu server installation if you want
 Clone Spire to a directory of your choosing
 
 ```
-git clone https://github.com/EQEmuTools/spire.git
+git clone https://github.com/EQEmu/spire.git
 ```
 
 ### Windows - Init

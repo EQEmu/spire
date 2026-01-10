@@ -1,7 +1,7 @@
 package eqemuserver
 
 import (
-	"github.com/EQEmuTools/spire/internal/system"
+	"github.com/EQEmu/spire/internal/system"
 	"net/http"
 )
 

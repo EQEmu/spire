@@ -2,11 +2,11 @@ package boot
 
 import (
 	"context"
-	"github.com/EQEmuTools/spire/internal/database"
-	"github.com/EQEmuTools/spire/internal/desktop"
-	"github.com/EQEmuTools/spire/internal/eqemuserver"
-	"github.com/EQEmuTools/spire/internal/http/routes"
-	"github.com/EQEmuTools/spire/internal/spire"
+	"github.com/EQEmu/spire/internal/database"
+	"github.com/EQEmu/spire/internal/desktop"
+	"github.com/EQEmu/spire/internal/eqemuserver"
+	"github.com/EQEmu/spire/internal/http/routes"
+	"github.com/EQEmu/spire/internal/spire"
 	gocache "github.com/patrickmn/go-cache"
 	"github.com/spf13/cobra"
 	"gorm.io/gorm"

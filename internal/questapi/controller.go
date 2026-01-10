@@ -2,8 +2,8 @@ package questapi
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/env"
-	"github.com/EQEmuTools/spire/internal/http/routes"
+	"github.com/EQEmu/spire/internal/env"
+	"github.com/EQEmu/spire/internal/http/routes"
 	"github.com/labstack/echo/v4"
 	"net/http"
 )

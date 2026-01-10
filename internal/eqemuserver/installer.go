@@ -6,13 +6,13 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/download"
-	"github.com/EQEmuTools/spire/internal/eqemuloginserver"
-	"github.com/EQEmuTools/spire/internal/eqemuserverconfig"
-	"github.com/EQEmuTools/spire/internal/logger"
-	"github.com/EQEmuTools/spire/internal/password"
-	"github.com/EQEmuTools/spire/internal/pathmgmt"
-	"github.com/EQEmuTools/spire/internal/unzip"
+	"github.com/EQEmu/spire/internal/download"
+	"github.com/EQEmu/spire/internal/eqemuloginserver"
+	"github.com/EQEmu/spire/internal/eqemuserverconfig"
+	"github.com/EQEmu/spire/internal/logger"
+	"github.com/EQEmu/spire/internal/password"
+	"github.com/EQEmu/spire/internal/pathmgmt"
+	"github.com/EQEmu/spire/internal/unzip"
 	"github.com/go-git/go-git/v5"
 	"github.com/google/go-github/v41/github"
 	"github.com/shirou/gopsutil/v3/host"
@@ -1171,7 +1171,7 @@ func (a *Installer) checkIfMapsAreUpToDate() error {
 	}
 
 	// get latest release version
-	resp, err := http.Get("https://api.github.com/repos/EQEmuTools/eqemu-maps/releases/latest")
+	resp, err := http.Get("https://api.github.com/repos/EQEmu/maps/releases/latest")
 	if err != nil {
 		return fmt.Errorf("could not get latest release version: %v", err)
 	}

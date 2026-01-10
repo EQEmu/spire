@@ -3,9 +3,9 @@ package eqemuserver
 import (
 	"context"
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/console"
-	spiremiddleware "github.com/EQEmuTools/spire/internal/http/middleware"
-	"github.com/EQEmuTools/spire/internal/system"
+	"github.com/EQEmu/spire/internal/console"
+	spiremiddleware "github.com/EQEmu/spire/internal/http/middleware"
+	"github.com/EQEmu/spire/internal/system"
 	"github.com/labstack/echo/v4"
 	"github.com/shirou/gopsutil/v3/process"
 	"net/http"

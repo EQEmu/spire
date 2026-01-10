@@ -2,10 +2,10 @@ package auditlog
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/database"
-	"github.com/EQEmuTools/spire/internal/discord"
-	"github.com/EQEmuTools/spire/internal/http/request"
-	"github.com/EQEmuTools/spire/internal/models"
+	"github.com/EQEmu/spire/internal/database"
+	"github.com/EQEmu/spire/internal/discord"
+	"github.com/EQEmu/spire/internal/http/request"
+	"github.com/EQEmu/spire/internal/models"
 	"github.com/labstack/echo/v4"
 	"github.com/patrickmn/go-cache"
 	"os"

@@ -1,13 +1,13 @@
 package eqemuserver
 
 import (
-	"github.com/EQEmuTools/spire/internal/database"
-	"github.com/EQEmuTools/spire/internal/env"
-	"github.com/EQEmuTools/spire/internal/eqemuserverconfig"
-	"github.com/EQEmuTools/spire/internal/logger"
-	"github.com/EQEmuTools/spire/internal/models"
-	"github.com/EQEmuTools/spire/internal/pathmgmt"
-	"github.com/EQEmuTools/spire/internal/rfsnotify"
+	"github.com/EQEmu/spire/internal/database"
+	"github.com/EQEmu/spire/internal/env"
+	"github.com/EQEmu/spire/internal/eqemuserverconfig"
+	"github.com/EQEmu/spire/internal/logger"
+	"github.com/EQEmu/spire/internal/models"
+	"github.com/EQEmu/spire/internal/pathmgmt"
+	"github.com/EQEmu/spire/internal/rfsnotify"
 	"github.com/fsnotify/fsnotify"
 	"log"
 	"os"

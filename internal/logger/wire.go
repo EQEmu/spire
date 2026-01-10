@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"github.com/EQEmuTools/spire/internal/env"
+	"github.com/EQEmu/spire/internal/env"
 	"os"
 	"strings"
 )

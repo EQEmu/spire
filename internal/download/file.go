@@ -2,8 +2,8 @@ package download
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/banner"
-	"github.com/EQEmuTools/spire/internal/console"
+	"github.com/EQEmu/spire/internal/banner"
+	"github.com/EQEmu/spire/internal/console"
 	"github.com/schollz/progressbar/v3"
 	"io"
 	"net/http"

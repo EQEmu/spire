@@ -3,7 +3,7 @@ package eqtraders
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/models"
+	"github.com/EQEmu/spire/internal/models"
 	"os"
 	"sort"
 	"strings"
