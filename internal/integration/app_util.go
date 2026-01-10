@@ -1,9 +1,9 @@
 package integration
 
 import (
-	"github.com/EQEmuTools/spire/boot"
-	"github.com/EQEmuTools/spire/internal/env"
-	"github.com/EQEmuTools/spire/internal/models"
+	"github.com/EQEmu/spire/boot"
+	"github.com/EQEmu/spire/internal/env"
+	"github.com/EQEmu/spire/internal/models"
 	"log"
 )
 

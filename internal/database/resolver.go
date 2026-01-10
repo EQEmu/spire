@@ -2,11 +2,11 @@ package database
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/encryption"
-	"github.com/EQEmuTools/spire/internal/env"
-	"github.com/EQEmuTools/spire/internal/http/request"
-	"github.com/EQEmuTools/spire/internal/logger"
-	"github.com/EQEmuTools/spire/internal/models"
+	"github.com/EQEmu/spire/internal/encryption"
+	"github.com/EQEmu/spire/internal/env"
+	"github.com/EQEmu/spire/internal/http/request"
+	"github.com/EQEmu/spire/internal/logger"
+	"github.com/EQEmu/spire/internal/models"
 	"github.com/labstack/echo/v4"
 	gocache "github.com/patrickmn/go-cache"
 	"gorm.io/driver/mysql"

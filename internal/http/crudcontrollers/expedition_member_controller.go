@@ -2,9 +2,9 @@ package crudcontrollers
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/database"
-	"github.com/EQEmuTools/spire/internal/http/routes"
-	"github.com/EQEmuTools/spire/internal/models"
+	"github.com/EQEmu/spire/internal/database"
+	"github.com/EQEmu/spire/internal/http/routes"
+	"github.com/EQEmu/spire/internal/models"
 	"github.com/labstack/echo/v4"
 	"net/http"
 	"strconv"

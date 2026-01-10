@@ -2,10 +2,10 @@ package desktop
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/env"
-	"github.com/EQEmuTools/spire/internal/eqemuserverconfig"
-	"github.com/EQEmuTools/spire/internal/http"
-	"github.com/EQEmuTools/spire/internal/logger"
+	"github.com/EQEmu/spire/internal/env"
+	"github.com/EQEmu/spire/internal/eqemuserverconfig"
+	"github.com/EQEmu/spire/internal/http"
+	"github.com/EQEmu/spire/internal/logger"
 	"log"
 	"net"
 	gohttp "net/http"

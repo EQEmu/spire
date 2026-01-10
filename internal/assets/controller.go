@@ -2,8 +2,8 @@ package assets
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/database"
-	"github.com/EQEmuTools/spire/internal/http/routes"
+	"github.com/EQEmu/spire/internal/database"
+	"github.com/EQEmu/spire/internal/http/routes"
 	"github.com/anaskhan96/soup"
 	"github.com/labstack/echo/v4"
 	"net/http"

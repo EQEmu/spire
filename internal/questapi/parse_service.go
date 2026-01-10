@@ -1,7 +1,7 @@
 package questapi
 
 import (
-	"github.com/EQEmuTools/spire/internal/github"
+	"github.com/EQEmu/spire/internal/github"
 	gocache "github.com/patrickmn/go-cache"
 	"sort"
 	"strings"

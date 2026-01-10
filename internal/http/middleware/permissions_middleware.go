@@ -2,12 +2,12 @@ package middleware
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/database"
-	"github.com/EQEmuTools/spire/internal/env"
-	"github.com/EQEmuTools/spire/internal/http/request"
-	"github.com/EQEmuTools/spire/internal/logger"
-	"github.com/EQEmuTools/spire/internal/models"
-	"github.com/EQEmuTools/spire/internal/permissions"
+	"github.com/EQEmu/spire/internal/database"
+	"github.com/EQEmu/spire/internal/env"
+	"github.com/EQEmu/spire/internal/http/request"
+	"github.com/EQEmu/spire/internal/logger"
+	"github.com/EQEmu/spire/internal/models"
+	"github.com/EQEmu/spire/internal/permissions"
 	"github.com/labstack/echo/v4"
 	gocache "github.com/patrickmn/go-cache"
 	"net/http"

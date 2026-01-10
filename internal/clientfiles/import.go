@@ -3,8 +3,8 @@ package clientfiles
 import (
 	"database/sql"
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/database"
-	"github.com/EQEmuTools/spire/internal/logger"
+	"github.com/EQEmu/spire/internal/database"
+	"github.com/EQEmu/spire/internal/logger"
 	"gorm.io/gorm"
 	"strings"
 )

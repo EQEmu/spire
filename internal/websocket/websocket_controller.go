@@ -3,9 +3,9 @@ package websocket
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/http/routes"
-	"github.com/EQEmuTools/spire/internal/logger"
-	"github.com/EQEmuTools/spire/internal/pathmgmt"
+	"github.com/EQEmu/spire/internal/http/routes"
+	"github.com/EQEmu/spire/internal/logger"
+	"github.com/EQEmu/spire/internal/pathmgmt"
 	"github.com/labstack/echo/v4"
 	"golang.org/x/net/websocket"
 	"net/http"

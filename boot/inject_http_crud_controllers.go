@@ -1,8 +1,8 @@
 package boot
 
 import (
-	"github.com/EQEmuTools/spire/internal/http/crudcontrollers"
-	"github.com/EQEmuTools/spire/internal/http/routes"
+	"github.com/EQEmu/spire/internal/http/crudcontrollers"
+	"github.com/EQEmu/spire/internal/http/routes"
 	"github.com/google/wire"
 )
 

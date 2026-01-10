@@ -2,10 +2,10 @@ package spire
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/crashreporting"
-	"github.com/EQEmuTools/spire/internal/database"
-	"github.com/EQEmuTools/spire/internal/models"
-	"github.com/EQEmuTools/spire/internal/pathmgmt"
+	"github.com/EQEmu/spire/internal/crashreporting"
+	"github.com/EQEmu/spire/internal/database"
+	"github.com/EQEmu/spire/internal/models"
+	"github.com/EQEmu/spire/internal/pathmgmt"
 	"github.com/k0kubun/pp/v3"
 	"github.com/spf13/cobra"
 	"os"

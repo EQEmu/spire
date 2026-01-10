@@ -2,12 +2,12 @@ package eqemuserver
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/discord"
-	"github.com/EQEmuTools/spire/internal/eqemuserverconfig"
-	"github.com/EQEmuTools/spire/internal/logger"
-	"github.com/EQEmuTools/spire/internal/pathmgmt"
-	"github.com/EQEmuTools/spire/internal/rfsnotify"
-	"github.com/EQEmuTools/spire/internal/websocket"
+	"github.com/EQEmu/spire/internal/discord"
+	"github.com/EQEmu/spire/internal/eqemuserverconfig"
+	"github.com/EQEmu/spire/internal/logger"
+	"github.com/EQEmu/spire/internal/pathmgmt"
+	"github.com/EQEmu/spire/internal/rfsnotify"
+	"github.com/EQEmu/spire/internal/websocket"
 	"github.com/fsnotify/fsnotify"
 	"log"
 	"os"

@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/console"
-	"github.com/EQEmuTools/spire/internal/http"
-	"github.com/EQEmuTools/spire/internal/http/routes"
+	"github.com/EQEmu/spire/internal/console"
+	"github.com/EQEmu/spire/internal/http"
+	"github.com/EQEmu/spire/internal/http/routes"
 	"github.com/labstack/echo/v4"
 	"github.com/spf13/cobra"
 	"log"

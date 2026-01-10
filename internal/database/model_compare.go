@@ -2,7 +2,7 @@ package database
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/structs"
+	"github.com/EQEmu/spire/internal/structs"
 	"reflect"
 	"strings"
 )

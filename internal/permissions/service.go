@@ -2,11 +2,11 @@ package permissions
 
 import (
 	"fmt"
-	"github.com/EQEmuTools/spire/internal/console"
-	"github.com/EQEmuTools/spire/internal/database"
-	"github.com/EQEmuTools/spire/internal/env"
-	"github.com/EQEmuTools/spire/internal/logger"
-	"github.com/EQEmuTools/spire/internal/models"
+	"github.com/EQEmu/spire/internal/console"
+	"github.com/EQEmu/spire/internal/database"
+	"github.com/EQEmu/spire/internal/env"
+	"github.com/EQEmu/spire/internal/logger"
+	"github.com/EQEmu/spire/internal/models"
 	"github.com/gertd/go-pluralize"
 	"github.com/iancoleman/strcase"
 	"github.com/k0kubun/pp/v3"
