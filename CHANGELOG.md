@@ -1,3 +1,7 @@
+## [4.24.2] 1/15/2026
+
+* **Info** Updated a one more URL and some info references. (@Joligario)
+
 ## [4.24.1] 1/10/2026
 
 * **Info** Updated a few more URL references. (@Joligario)
