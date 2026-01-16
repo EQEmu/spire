@@ -1191,7 +1191,7 @@ func (a *Installer) checkIfMapsAreUpToDate() error {
 		return fmt.Errorf("could not unmarshal response body: %v", err)
 	}
 
-	a.logger.Info().Any("version", release.TagName).Msg("Downloading eqemu-maps release")
+	a.logger.Info().Any("version", release.TagName).Msg("Downloading EQEmu maps release")
 
 	type PackageJson struct {
 		Version string `json:"version"`
@@ -1222,7 +1222,7 @@ func (a *Installer) checkIfMapsAreUpToDate() error {
 	remoteVersion := strings.ReplaceAll(release.TagName, "v", "")
 
 	if len(remoteVersion) == 0 {
-		a.logger.Info().Any("version", remoteVersion).Msg("Could not retrieve latest [eqemu-maps] version, possibly rate limited, skipping")
+		a.logger.Info().Any("version", remoteVersion).Msg("Could not retrieve latest [EQEmu maps] version, possibly rate limited, skipping")
 		return nil
 	}
 
@@ -1339,7 +1339,7 @@ func (a *Installer) installSpireBinary() error {
 		client := github.NewClient(&http.Client{Timeout: 5 * time.Second})
 		release, _, err := client.Repositories.GetLatestRelease(
 			context.Background(),
-			"EQEmuTools",
+			"EQEmu",
 			"spire",
 		)
 		if err != nil {
