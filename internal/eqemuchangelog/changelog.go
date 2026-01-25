@@ -37,7 +37,7 @@ func NewChangelog() *Changelog {
 
 func (c *Changelog) getCommitsDaysBack() []*github.RepositoryCommit {
 	daysSinceLastRelease := 0
-	r, _, _ := c.client.Repositories.GetLatestRelease(context.Background(), "EQEmu", "Server")
+	r, _, _ := c.client.Repositories.GetLatestRelease(context.Background(), "EQEmu", "EQEmu")
 	if *r.ID > 0 {
 		date := time.Now()
 		diff := date.Sub(r.CreatedAt.Time)
@@ -49,7 +49,7 @@ func (c *Changelog) getCommitsDaysBack() []*github.RepositoryCommit {
 		commits, _, err := c.client.Repositories.ListCommits(
 			context.Background(),
 			"EQEmu",
-			"server",
+			"EQEmu",
 			&github.CommitsListOptions{
 				Since: time.Now().Add(-time.Hour * 24 * time.Duration(daysSinceLastRelease)),
 				ListOptions: github.ListOptions{
@@ -87,7 +87,7 @@ type ChangelogEntry struct {
 
 func (c *Changelog) BuildChangelog(commits []*github.RepositoryCommit) string {
 	var lastReleaseNotes string
-	r, _, _ := c.client.Repositories.GetLatestRelease(context.Background(), "EQEmu", "Server")
+	r, _, _ := c.client.Repositories.GetLatestRelease(context.Background(), "EQEmu", "EQEmu")
 	if *r.ID > 0 {
 		lastReleaseNotes = r.GetBody()
 	}
@@ -117,45 +117,69 @@ func (c *Changelog) BuildChangelog(commits []*github.RepositoryCommit) string {
 		}
 
 		// categories
-		category := ""
-		if strings.Contains(message, "]") && strings.Contains(message, "[") {
+		category := "Unknown Category"
+		if strings.Contains(message, "[") && strings.Contains(message, "]") {
 			category = c.GetStringInBetween(message, "[", "]")
-			if len(category) < 20 {
-				message = strings.TrimSpace(
-					strings.ReplaceAll(
-						message,
-						fmt.Sprintf("[%v]", category),
-						"",
-					),
-				)
+		}
+		if len(category) < 20 {
+			message = strings.TrimSpace(
+				strings.ReplaceAll(
+					message,
+					fmt.Sprintf("[%v]", category),
+					"",
+				),
+			)
 
-				// one-off find replace fixes
-				replacements := make(map[string]string, 0)
-				replacements["Code Cleanup"] = "Code"
-				replacements["Cleanup"] = "Code"
-				replacements["Bot"] = "Bots"
-				replacements["Command"] = "Commands"
-				replacements["Repository"] = "Repositories"
-				replacements["Rule"] = "Rules"
-				replacements["Bug Fix"] = "Fixes"
-				replacements["Fix"] = "Fixes"
-				replacements["INT64"] = "int64"
-				replacements["Hotfox"] = "Hotfix"
-				replacements["HotFix"] = "Hotfix"
-				replacements["Hotfix"] = "Fixes"
-				replacements["Quest"] = "Quest API"
-				replacements["Bots/Mercs"] = "Bots & Mercenaries"
-				replacements["Bots & Mercs"] = "Bots & Mercenaries"
+			// one-off find replace fixes
+			replacements := make(map[string]string)
+			replacements["Bot"] = "Bots"
+			replacements["Bots/Mercs"] = "Bots & Mercenaries"
+			replacements["Bots & Mercs"] = "Bots & Mercenaries"
+			replacements["Bug"] = "Fixes"
+			replacements["Bug Fix"] = "Fixes"
+			replacements["Bugfix"] = "Fixes"
+			replacements["BugFix"] = "Fixes"
+			replacements["Cleanup"] = "Code"
+			replacements["Code Cleanup"] = "Code"
+			replacements["Command"] = "Commands"
+			replacements["Crash"] = "Fixes"
+			replacements["Crash Fix"] = "Fixes"
+			replacements["Fix"] = "Fixes"
+			replacements["FIX"] = "Fixes"
+			replacements["Hotfox"] = "Hotfix"
+			replacements["Hotfix"] = "Hotfix"
+			replacements["HotFix"] = "Hotfix"
+			replacements["Hot Fix"] = "Hotfix"
+			replacements["Instance"] = "Instances"
+			replacements["INT64"] = "int64"
+			replacements["Logs"] = "Logging"
+			replacements["Lua"] = "Quest API"
+			replacements["Lua Mod"] = "Quest API"
+			replacements["Memory Leak"] = "Fixes"
+			replacements["Netcode"] = "Networking"
+			replacements["Network"] = "Networking"
+			replacements["Perl"] = "Quest API"
+			replacements["Player Event Logs"] = "Logging"
+			replacements["Quest"] = "Quest API"
+			replacements["Quests"] = "Quest API"
+			replacements["Repository"] = "Repositories"
+			replacements["Reload"] = "Reloading"
+			replacements["Repop"] = "Commands"
+			replacements["Rule"] = "Rules"
+			replacements["Skill Caps"] = "Skills"
+			replacements["World API"] = "World"
+			replacements["Zone Instances"] = "Instances"
+			replacements["Zone State"] = "Zone"
+			replacements["Zoning"] = "Zone"
 
-				for find, replacement := range replacements {
-					if category == find {
-						category = strings.ReplaceAll(category, find, replacement)
-					}
+			for find, replacement := range replacements {
+				if category == find {
+					category = strings.ReplaceAll(category, find, replacement)
 				}
+			}
 
-				if !contains(categories, category) {
-					categories = append(categories, category)
-				}
+			if !contains(categories, category) {
+				categories = append(categories, category)
 			}
 		}
 
