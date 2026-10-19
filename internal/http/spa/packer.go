@@ -106,7 +106,8 @@ func (s Packer) MiddlewareHandler() echo.MiddlewareFunc {
 
 			// If we find a valid non-index file in the box, continue the request as normal
 			// and let the static asset handler pick up the request later
-			fileRequest := strings.Replace(c.Request().RequestURI, s.config.BasePath, "", -1)
+			// use the path without the query string, so versioned asset urls (e.g. engine.js?v=2) are found
+			fileRequest := strings.Replace(c.Request().URL.Path, s.config.BasePath, "", -1)
 			_, err = s.box.Find(fileRequest)
 			if err == nil {
 				return next(c)

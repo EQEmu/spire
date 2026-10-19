@@ -35,7 +35,22 @@ type ImportResult struct {
 	DroppedRows  int64
 }
 
+// hasRowsWithColumns reports whether any line has the expected number of ^ separated columns
+// checked before purging a table, so a file in another format (e.g. a TOB client file) can't empty it
+func hasRowsWithColumns(fileContents string, expected int) bool {
+	for _, s := range strings.Split(fileContents, "\n") {
+		if len(strings.Split(s, "^")) == expected {
+			return true
+		}
+	}
+
+	return false
+}
+
 func (i *Importer) ImportSpells(db *gorm.DB, fileContents string) (ImportResult, error) {
+	if !hasRowsWithColumns(fileContents, SPELL_COLUMN_LENGTH) {
+		return ImportResult{}, fmt.Errorf("no spells with %v columns found, only RoF2 format spells_us.txt files can be imported", SPELL_COLUMN_LENGTH)
+	}
 
 	// purge
 	rowsDeleted := db.Exec("DELETE FROM spells_new").RowsAffected
@@ -109,6 +124,9 @@ func (i *Importer) ImportSpells(db *gorm.DB, fileContents string) (ImportResult,
 const DB_STR_COLUMN_LENGTH = 4
 
 func (i *Importer) ImportDbStr(db *gorm.DB, fileContents string) (ImportResult, error) {
+	if !hasRowsWithColumns(fileContents, DB_STR_COLUMN_LENGTH) {
+		return ImportResult{}, fmt.Errorf("no strings with %v columns found, only RoF2 format dbstr_us.txt files can be imported", DB_STR_COLUMN_LENGTH)
+	}
 
 	// purge
 	rowsDeleted := db.Exec("DELETE FROM db_str").RowsAffected

@@ -5,5 +5,6 @@ export default {
   4: 'Seeds of Destruction',
   5: 'Underfoot',
   6: 'Rain of Fear',
-  7: 'Rain of Fear (2)'
+  7: 'Rain of Fear (2)',
+  8: 'The Outer Brood (ToB)'
 }

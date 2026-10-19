@@ -6,16 +6,18 @@ import (
 	"github.com/EQEmu/spire/internal/database"
 	"github.com/EQEmu/spire/internal/logger"
 	"github.com/EQEmu/spire/internal/models"
+	"github.com/EQEmu/spire/internal/pathmgmt"
 	"gorm.io/gorm"
 	"strings"
 )
 
 type Exporter struct {
-	logger *logger.AppLogger
+	logger   *logger.AppLogger
+	pathmgmt *pathmgmt.PathManagement
 }
 
-func NewExporter(logger *logger.AppLogger) *Exporter {
-	return &Exporter{logger: logger}
+func NewExporter(logger *logger.AppLogger, pathmgmt *pathmgmt.PathManagement) *Exporter {
+	return &Exporter{logger: logger, pathmgmt: pathmgmt}
 }
 
 func (e *Exporter) getDatabase(g *gorm.DB) *sql.DB {
@@ -28,9 +30,12 @@ func (e *Exporter) getDatabase(g *gorm.DB) *sql.DB {
 	return db
 }
 
+// RoF2MaxSpellId is the highest spell id the RoF2 client can load, a spells_us.txt with higher ids breaks it
+const RoF2MaxSpellId = 44999
+
 func (e *Exporter) ExportSpells(db *gorm.DB) string {
 	var entries []map[string]interface{}
-	db.Model(&models.SpellsNew{}).Find(&entries)
+	db.Model(&models.SpellsNew{}).Where("id <= ?", RoF2MaxSpellId).Find(&entries)
 
 	columns, err := database.GetTableSchema(db, "spells_new")
 	if err != nil {
