@@ -455,9 +455,14 @@ func (a *Controller) build(c echo.Context) error {
 		return c.String(http.StatusBadRequest, err.Error())
 	}
 
+	buildTool, err := buildToolPath(r.BuildTool)
+	if err != nil {
+		return c.String(http.StatusBadRequest, err.Error())
+	}
+
 	c.Response().WriteHeader(http.StatusOK)
 
-	cmd := exec.Command(r.BuildTool, fmt.Sprintf("-j%v", r.BuildCores))
+	cmd := exec.Command(buildTool, fmt.Sprintf("-j%v", r.BuildCores))
 	cmd.Env = os.Environ()
 	if runtime.GOOS == "linux" {
 		cmd.Env = append(cmd.Env, "TERM=xterm")
@@ -503,9 +508,14 @@ func (a *Controller) buildClean(c echo.Context) error {
 		return c.String(http.StatusBadRequest, err.Error())
 	}
 
+	buildTool, err := buildToolPath(r.BuildTool)
+	if err != nil {
+		return c.String(http.StatusBadRequest, err.Error())
+	}
+
 	c.Response().WriteHeader(http.StatusOK)
 
-	cmd := exec.Command(r.BuildTool, "clean")
+	cmd := exec.Command(buildTool, "clean")
 	cmd.Env = os.Environ()
 	if runtime.GOOS == "linux" {
 		cmd.Env = append(cmd.Env, "TERM=xterm")
@@ -551,11 +561,15 @@ func (a *Controller) buildCancel(c echo.Context) error {
 		return c.String(http.StatusBadRequest, err.Error())
 	}
 
+	killProcs, err := buildCancelTargets(r.BuildTool)
+	if err != nil {
+		return c.String(http.StatusBadRequest, err.Error())
+	}
+
 	c.Response().WriteHeader(http.StatusOK)
 
-	killProcs := []string{filepath.Base(r.BuildTool), "ccache"}
 	for _, proc := range killProcs {
-		cmd := exec.Command("pkill", "-9", proc)
+		cmd := exec.Command("pkill", buildCancelKillArgs(proc)...)
 		cmd.Env = os.Environ()
 		cmd.Dir = r.SourceDirectory
 		stdout, err := cmd.StdoutPipe()
